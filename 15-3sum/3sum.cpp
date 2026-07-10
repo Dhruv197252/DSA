@@ -10,13 +10,14 @@ public:
             }else if(nums[i]+nums[j]<target){
                 i++;
             }else{
+                result.push_back({-target, nums[i],nums[j]});
                 while(i<j && nums[i]==nums[i+1]){
                     i++;
                 }
                 while(i<j && nums[j]==nums[j-1]){
                     j--;
                 }
-                result.push_back({-target, nums[i],nums[j]});
+                // result.push_back({-target, nums[i],nums[j]});
                 i++;
                 j--;
             }
