@@ -34,10 +34,10 @@ public:
                 freq2++;
             }
         }
-        if (freq1 > floor(n / 3)) {
+        if (freq1 > (n / 3)) {
             result.push_back(max1);
         }
-        if (freq2 > floor(n / 3)) {
+        if (freq2 > (n / 3)) {
             result.push_back(max2);
         }
         return result;
