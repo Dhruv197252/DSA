@@ -1,6 +1,12 @@
 # Write your MySQL query statement below
 
-select person_name from (
-SELECT person_name,turn,
-sum(weight) over (order by turn) AS weight FROM queue) p
-where weight <=1000 order by turn desc limit 1
+SELECT person_name
+FROM (
+    SELECT person_name,
+           turn,
+           SUM(weight) OVER (ORDER BY turn) AS running_weight
+    FROM Queue
+) p
+WHERE running_weight <= 1000
+ORDER BY turn DESC
+LIMIT 1;
