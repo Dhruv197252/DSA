@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-SELECT requester_id as id, COUNT(accepter_id) as num
+SELECT requester_id as id, COUNT(*) as num
 FROM 
 (SELECT requester_id, accepter_id
 FROM RequestAccepted
