@@ -3,7 +3,7 @@ SELECT requester_id as id, COUNT(accepter_id) as num
 FROM 
 (SELECT requester_id, accepter_id
 FROM RequestAccepted
-UNION 
+UNION ALL
 SELECT accepter_id, requester_id
 FROM RequestAccepted
 )t
